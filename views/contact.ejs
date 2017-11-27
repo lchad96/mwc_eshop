@@ -3,11 +3,16 @@
 	<head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<style>
+		#contact_info{
+			margin-top: 5em;
+		}
+	</style>
 	</head>
 	<body>
 		<section id="nav">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	  <a class="navbar-brand" href="#"><i class="fa fa-mobile fa-lg"></i> MWC Cases</a>
+	  <a class="navbar-brand" href="/"><i class="fa fa-mobile fa-lg"></i> MWC Cases</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -33,19 +38,42 @@
 	</nav>
 			</section>
 
-		<section id="offers">
+		<section id="contact_info">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<h1>hello</h1>
+						<h1>Contact Us</h1>
+						<br>
+						<b>
+						<p>MWC are located in the centre of London. If you wish to write to us the address is the following;</p>
+						<p>Victoria Plaza<br /> 111 Buckingham Palace Rd <br /> London <br />SW1W 0SR</p>
+						<i class="fa fa-phone fa-2x"></i>  07512901642<br />
+						<i class="fa fa-envelope-o fa-2x"></i>  customerservice@mwc_eshop.co.uk
+					</b>
 					</div>
 					<div class="col-md-6">
-						<h1>hello</h1>
+						<div id="map" style="width:400px;height:400px">
+							<script>
+							function myMap() {
+							var mapOptions = {
+									center: new google.maps.LatLng(51.494853, -0.145828),
+									zoom: 15,
+									mapTypeId: google.maps.MapTypeId.HYBRID
+							}
+							var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+							}
+							</script>
 					</div>
 				</div>
 		</div>
 		</section>
 
+		<section id="footer">
+			<nav class="navbar fixed-bottom navbar-light bg-light">
+			<p>MWC eShop 2017© All rights reserved.</p>
+			</nav>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn_GeowIzNG56xdfQk42R-ptVcV90L3eM&callback=myMap"></script>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
