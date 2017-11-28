@@ -5,18 +5,22 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 	<title>Products</title>
 	<style>
-	#top-row{
+
+	#products-top{
 		margin-top: 5em;
-	}
-	
-	#offers{
 		margin-bottom: 5em;
+	}
+	#products-bottom{
+		margin-bottom: 5em;
+	}
+	#copyright{
+  margin-left:79.75%;
 	}
 	</style>
 	</head>
 	<body>
 		<section id="nav">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <a href="/" class="navbar-brand" href="#"><i class="fa fa-mobile fa-lg"></i> MWC Cases</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -42,9 +46,9 @@
   </div>
 </nav>
 		</section>
-		<section id="products">
+		<section id="products-top">
 			<div class="container">
-				<div class="row" id="top-row">
+				<div class="row">
 					<div class="col-md-4">
 						<div class="card" style="width: 20rem;">
   						<center><img class="card-img-top" src="http://localhost:3000/images/lgv30-zebra.jpg" alt="Card image cap" style="width:50%;"></center>
@@ -82,9 +86,9 @@
 		</div>
 	</div>
 		</section>
-		<section id="offers">
+		<section id="products-bottom">
 			<div class="container">
-				<div class="row" id="top-row">
+				<div class="row">
 					<div class="col-md-4">
 						<div class="card" style="width: 20rem;">
   						<center><img class="card-img-top" src="http://localhost:3000/images/s8-mahogany.jpg" alt="Card image cap" style="width:50%;"></center>
@@ -101,7 +105,7 @@
   						<center><img class="card-img-top" src="http://localhost:3000/images/pixel-zebra.jpg" alt="Card image cap" style="width:50%;"></center>
   							<div class="card-body">
     							<h4 class="card-title">Google Pixel 2 XL</h4>
-    							<p class="card-text">Every MWC Pixel 2 XL case is made from the same world-class material.</p>
+    							<p class="card-text">Every MWC Pixel 2 XL case is made from the same world-class material you won't find anywhere else.</p>
     							<a href="#" class="btn btn-dark">More info</a>
 									<a href="#" class="btn btn-success">Buy now</a>
   							</div>
@@ -112,7 +116,7 @@
   						<center><img class="card-img-top" src="http://localhost:3000/images/pixel-mahogany.jpg" alt="Card image cap" style="width:50%;"></center>
   							<div class="card-body">
     							<h4 class="card-title">Google Pixel 2 XL</h4>
-    							<p class="card-text">Every MWC Pixel 2 XL case is made from the same world-class material.</p>
+    							<p class="card-text">Every MWC Pixel 2 XL case is made from the same world-class material you won't find anywhere else.</p>
     							<a href="#" class="btn btn-dark">More info</a>
 									<a href="#" class="btn btn-success">Buy now</a>
   							</div>
@@ -122,6 +126,11 @@
 		</div>
 	</div>
 		</section>
+
+		<section id="footer">
+			<nav class="navbar fixed-bottom navbar-light bg-light">
+  		<p id="copyright">MWC eShop 2017© All rights reserved.</p>
+			</nav>
 
 
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
