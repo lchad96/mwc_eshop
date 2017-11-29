@@ -6,8 +6,9 @@
 	<link rel="shortcut icon" type="image/x-icon" href="http://localhost:3000/images/tab-icon.ico" />
 	<title>Payment</title>
 	<style>
-		#payment_details{
+		#payment{
 			margin-top: 5em;
+			margin-bottom: 10em;
 		}
 		#copyright{
 		margin-left:79%;
@@ -15,7 +16,7 @@
 	</style>
 	</head>
 	<body>
-		<section id="nav">
+	<section id="nav">
 				<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 	  <a href="/" class="navbar-brand" href="/"><i class="fa fa-mobile fa-lg"></i> MWC Cases</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,59 +43,70 @@
 	    </ul>
 	  </div>
 	</nav>
-			</section>
+	</section>
 
-		<section id="payment_details">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Payment Details</h1>
-<form>
-<div class="row">
-	<div class="col-md-6 mb-3">
-		<label for="validationDefault01">First name</label>
-		<input type="text" class="form-control" id="validationDefault01" placeholder="Forename" required>
-	</div>
-	<div class="col-md-6 mb-3">
-		<label for="validationDefault02">Last name</label>
-		<input type="text" class="form-control" id="validationDefault02" placeholder="Surname" required>
-	</div>
+	<section id="payment">
+		<div class="container">
+  <div id="Checkout" class="inline">
+      <h1>Pay Invoice</h1>
+      <div class="card-row">
+          <span class="visa"></span>
+          <span class="mastercard"></span>
+          <span class="amex"></span>
+          <span class="discover"></span>
+      </div>
+      <form>
+          <div class="form-group">
+              <label for="PaymentAmount">Payment amount</label>
+              <div class="amount-placeholder">
+                  <span>$</span>
+                  <span>500.00</span>
+              </div>
+          </div>
+          <div class="form-group">
+              <label or="NameOnCard">Name on card</label>
+              <input id="NameOnCard" class="form-control" type="text" maxlength="255"></input>
+          </div>
+          <div class="form-group">
+              <label for="CreditCardNumber">Card number</label>
+              <input id="CreditCardNumber" class="null card-image form-control" type="text"></input>
+          </div>
+          <div class="expiry-date-group form-group">
+              <label for="ExpiryDate">Expiry date</label>
+              <input id="ExpiryDate" class="form-control" type="text" placeholder="MM / YY" maxlength="7"></input>
+          </div>
+          <div class="security-code-group form-group">
+              <label for="SecurityCode">Security code</label>
+              <div class="input-container" >
+                  <input id="SecurityCode" class="form-control" type="text" ></input>
+                  <i id="cvc" class="fa fa-question-circle"></i>
+              </div>
+              <div class="cvc-preview-container two-card hide">
+                  <div class="amex-cvc-preview"></div>
+                  <div class="visa-mc-dis-cvc-preview"></div>
+              </div>
+          </div>
+          <div class="zip-code-group form-group">
+              <label for="ZIPCode">ZIP/Postal code</label>
+              <div class="input-container">
+                  <input id="ZIPCode" class="form-control" type="text" maxlength="10"></input>
+                  <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address."><i class="fa fa-question-circle"></i></a>
+              </div>
+          </div>
+          <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit">
+              <span class="submit-button-lock"></span>
+              <span class="align-middle">Pay $500.00</span>
+          </button>
+      </form>
+  </div>
 </div>
-<div class="row">
-	<div class="col-md-3 mb-2">
-		<label for="validationDefault03">House Number/Name</label>
-		<input type="text" class="form-control" id="validationDefault03" placeholder="House Number/Name" required>
-		<div class="invalid-feedback">
-			Please provide a valid city.
-		</div>
-	</div>
-	<div class="col-md-3 mb-3">
-		<label for="validationDefault04">Address Line 1</label>
-		<input type="text" class="form-control" id="validationDefault04" placeholder="Address Line 1" required>
-		<div class="invalid-feedback">
-			Please provide a valid state.
-		</div>
-	</div>
-	<div class="col-md-3 mb-3">
-		<label for="validationDefault05">Zip</label>
-		<input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
-		<div class="invalid-feedback">
-			Please provide a valid zip.
-		</div>
-	</div>
-</div>
+	</section>
 
-<button class="btn btn-primary" type="submit">Submit form</button>
-</form>
-					</div>
-				</div>
-		</div>
-		</section>
-
-		<section id="footer">
-			<nav class="navbar fixed-bottom navbar-light bg-light">
-  		<p id="copyright">MWC eShop 2017© All rights reserved.</p>
-			</nav>
+	<section id="footer">
+		<nav class="navbar fixed-bottom navbar-light bg-light">
+  	<p id="copyright">MWC eShop 2017© All rights reserved.</p>
+		</nav>
+	</section>
 
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
