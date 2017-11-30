@@ -3,6 +3,7 @@
 	<head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="http://localhost:3000/stylesheets/style,css">
 	<link rel="shortcut icon" type="image/x-icon" href="http://localhost:3000/images/tab-icon.ico" />
 	<title>Products</title>
 	<style>
@@ -56,7 +57,7 @@
   							<div class="card-body">
     							<h4 class="card-title">LG V30</h4>
     							<p class="card-text">LG V30 cases from MWC: premium materials, unique design, unrivalled quality.</p>
-    							<a href="#" class="btn btn-dark">More info</a>
+    							<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#product_view">More info</a>
 									<a href="#" class="btn btn-success">Buy now</a>
   							</div>
 						</div>
@@ -67,7 +68,7 @@
   							<div class="card-body">
     							<h4 class="card-title">LG V30</h4>
     							<p class="card-text">LG V30 cases from MWC: premium materials, unique design, unrivalled quality.</p>
-    							<a href="#" class="btn btn-dark">More info</a>
+    							<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#product_view">More info</a>
 									<a href="#" class="btn btn-success">Buy now</a>
   							</div>
 						</div>
@@ -78,7 +79,7 @@
   							<div class="card-body">
     							<h4 class="card-title">Samsung S8+</h4>
     							<p class="card-text">A MWC Galaxy S8+ case is made with two ingredients: quality materials and precision-fit.</p>
-    							<a href="#" class="btn btn-dark">More info</a>
+    							<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#product_view">More info</a>
 									<a href="#" class="btn btn-success">Buy now</a>
   							</div>
 						</div>
@@ -96,7 +97,7 @@
   							<div class="card-body">
     							<h4 class="card-title">Samsung S8+</h4>
     							<p class="card-text">A MWC Galaxy S8+ case is made with two ingredients: quality materials and precision-fit.</p>
-    							<a href="#" class="btn btn-dark">More info</a>
+    							<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#product_view">More info</a>
 									<a href="#" class="btn btn-success">Buy now</a>
   							</div>
 						</div>
@@ -107,7 +108,7 @@
   							<div class="card-body">
     							<h4 class="card-title">Google Pixel 2 XL</h4>
     							<p class="card-text">Every MWC Pixel 2 XL case is made from the same world-class material you won't find anywhere else.</p>
-    							<a href="#" class="btn btn-dark">More info</a>
+    							<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#product_view">More info</a>
 									<a href="#" class="btn btn-success">Buy now</a>
   							</div>
 						</div>
@@ -118,7 +119,7 @@
   							<div class="card-body">
     							<h4 class="card-title">Google Pixel 2 XL</h4>
     							<p class="card-text">Every MWC Pixel 2 XL case is made from the same world-class material you won't find anywhere else.</p>
-    							<a href="#" class="btn btn-dark">More info</a>
+    							<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#product_view">More info</a>
 									<a href="#" class="btn btn-success">Buy now</a>
   							</div>
 						</div>
@@ -126,6 +127,74 @@
 				</div>
 		</div>
 	</div>
+		</section>
+
+
+		<section id="quicklook">
+		<div class="modal fade product_view" id="product_view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">{productName}</h3>
+								<a href="/" data-dismiss="modal" class="class pull-right" style="color: red"><span class="fa fa-window-close"></span></a>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 product_content">
+                        <h4>Product Id: <span>{productId}</span></h4>
+                        <p>{productInfo}</p>
+												<div class="row">
+                            <div class="col-md-4 col-md-6">
+                                <select class="form-control" name="select">
+                                    <option value="" selected="">QTY</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+														<div class="col-md-4 col-md-6">
+														<h3 class="cost"><span class="fa fa-gbp"></span> 75.00</h3>
+													</div>
+                        </div>
+                        <div class="space-ten"></div>
+                        <div class="btn-ground">
+													<br/>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#basket-popup" data-dismiss="modal"><span class="fa fa-shopping-cart"></span> Add To Basket</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+		</section>
+
+		<section id="basket-popup-box">
+			<div class="modal fade basket-popup" id="basket-popup">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h3 class="modal-title">Added to basket</h3>
+									<a href="/" data-dismiss="modal" class="class pull-right" style="color: red"><span class="fa fa-window-close"></span></a>
+	            </div>
+							<div class="modal-body">
+	                <div class="row">
+										<div class="col-md-12 basket-popup">
+										<p><center>Continue shopping or go to checkout?</p></center>
+									</div>
+									<center>
+									<div class="row">
+										<div class="col-md-4 col-md-6 col-sm-6">
+											<a href="/products" class="btn btn-dark">Back to products</a>
+										</div>
+										<div class="col-md-4 col-md-6 col-sm-6">
+											<a href="/basket" class="btn btn-success">Go to basket</a>
+										</div>
+									</center>
+								</div>
+						</div>
+					</div>
+				</div>
 		</section>
 
 		<section id="footer">
