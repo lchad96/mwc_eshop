@@ -4,6 +4,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 	<link rel="shortcut icon" type="image/x-icon" href="http://localhost:3000/images/tab-icon.ico" />
+	<link rel="stylesheet" href="http://localhost:3000/stylesheets/style.css">
+	
 	<title>Payment</title>
 	<style>
 		#payment{
@@ -46,60 +48,414 @@
 	</section>
 
 	<section id="payment">
-		<div class="container">
-  <div id="Checkout" class="inline">
-      <h1>Pay Invoice</h1>
-      <div class="card-row">
-          <span class="visa"></span>
-          <span class="mastercard"></span>
-          <span class="amex"></span>
-          <span class="discover"></span>
-      </div>
-      <form>
-          <div class="form-group">
-              <label for="PaymentAmount">Payment amount</label>
-              <div class="amount-placeholder">
-                  <span>$</span>
-                  <span>500.00</span>
-              </div>
-          </div>
-          <div class="form-group">
-              <label or="NameOnCard">Name on card</label>
-              <input id="NameOnCard" class="form-control" type="text" maxlength="255"></input>
-          </div>
-          <div class="form-group">
-              <label for="CreditCardNumber">Card number</label>
-              <input id="CreditCardNumber" class="null card-image form-control" type="text"></input>
-          </div>
-          <div class="expiry-date-group form-group">
-              <label for="ExpiryDate">Expiry date</label>
-              <input id="ExpiryDate" class="form-control" type="text" placeholder="MM / YY" maxlength="7"></input>
-          </div>
-          <div class="security-code-group form-group">
-              <label for="SecurityCode">Security code</label>
-              <div class="input-container" >
-                  <input id="SecurityCode" class="form-control" type="text" ></input>
-                  <i id="cvc" class="fa fa-question-circle"></i>
-              </div>
-              <div class="cvc-preview-container two-card hide">
-                  <div class="amex-cvc-preview"></div>
-                  <div class="visa-mc-dis-cvc-preview"></div>
-              </div>
-          </div>
-          <div class="zip-code-group form-group">
-              <label for="ZIPCode">ZIP/Postal code</label>
-              <div class="input-container">
-                  <input id="ZIPCode" class="form-control" type="text" maxlength="10"></input>
-                  <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address."><i class="fa fa-question-circle"></i></a>
-              </div>
-          </div>
-          <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit">
-              <span class="submit-button-lock"></span>
-              <span class="align-middle">Pay $500.00</span>
-          </button>
-      </form>
-  </div>
-</div>
+<div class='container'>
+    <div class='row' style='padding-top:25px; padding-bottom:25px;'>
+        <div class='col-md-12'>
+            <div id='mainContentWrapper'>
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 style="text-align: center;">
+                        Review Your Order & Complete Checkout
+                    </h2>
+                    <hr/>
+                    <div class="shopping_cart">
+                        <form class="form-horizontal" role="form" action="" method="post" id="payment-form">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Review
+                                                Your Order</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse show">
+                                        <div class="panel-body">
+                                            <div class="items">
+                                                <div class="col-md-9">
+                                                    <table class="table table-striped">
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                <a class="btn btn-warning btn-sm pull-right"
+                                                                   href="http://www.startajobboard.com/"
+                                                                   title="Remove Item">X</a>
+                                                                <b>
+                                                                    Premium Posting</b></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <ul>
+                                                                    <li>One Job Posting Credit</li>
+                                                                    <li>Job Distribution*</li>
+                                                                    <li>Social Media Distribution</li>
+                                                                </ul>
+                                                            </td>
+                                                            <td>
+                                                                <b>$147.00</b>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div style="text-align: center;">
+                                                        <h3>Order Total</h3>
+                                                        <h3><span style="color:green;">$147.00</span></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+							<hr/>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <div style="text-align: center; width:100%;"><a style="width:100%;"
+                                                                                        data-toggle="collapse"
+                                                                                        data-parent="#accordion"
+                                                                                        href="#collapseTwo"
+                                                                                        class=" btn btn-success"
+                                                                                        onclick="$(this).fadeOut(); $('#payInfo').fadeIn();">Continue
+                                            to Billing Information»</a></div>
+                                    </h4>
+                                </div>
+                            </div>
+							<hr/>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Contact
+                                            and Billing Information</a>
+                                    </h4>
+                                </div>
+								<hr/>
+                                <div id="collapseTwo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <b>Help us keep your account safe and secure, please verify your billing
+                                            information.</b>
+                                        <br/><br/>
+                                        <table class="table table-striped" style="font-weight: bold;">
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_email">Your Email:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_email" name="email"
+                                                           required="required" type="text"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_first_name">First name:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_first_name" name="first_name"
+                                                           required="required" type="text"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_last_name">Last name:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_last_name" name="last_name"
+                                                           required="required" type="text"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_address_line_1">Street Name:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_address_line_1"
+                                                           name="address_line_1" required="required" type="text"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_address_line_2">House Number/Name:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_address_line_2"
+                                                           name="address_line_2" type="text"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_city">City:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_city" name="city"
+                                                           required="required" type="text"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_state">County:</label></td>
+                                                <td>
+                                                    <select class="form-control" id="id_state" name="state">
+                                                        <optgroup label="England">
+        <option>Bedfordshire</option>
+        <option>Berkshire</option>
+        <option>Bristol</option>
+        <option>Buckinghamshire</option>
+        <option>Cambridgeshire</option>
+        <option>Cheshire</option>
+        <option>City of London</option>
+        <option>Cornwall</option>
+        <option>Cumbria</option>
+        <option>Derbyshire</option>
+        <option>Devon</option>
+        <option>Dorset</option>
+        <option>Durham</option>
+        <option>East Riding of Yorkshire</option>
+        <option>East Sussex</option>
+        <option>Essex</option>
+        <option>Gloucestershire</option>
+        <option>Greater London</option>
+        <option>Greater Manchester</option>
+        <option>Hampshire</option>
+        <option>Herefordshire</option>
+        <option>Hertfordshire</option>
+        <option>Isle of Wight</option>
+        <option>Kent</option>
+        <option>Lancashire</option>
+        <option>Leicestershire</option>
+        <option>Lincolnshire</option>
+        <option>Merseyside</option>
+        <option>Norfolk</option>
+        <option>North Yorkshire</option>
+        <option>Northamptonshire</option>
+        <option>Northumberland</option>
+        <option>Nottinghamshire</option>
+        <option>Oxfordshire</option>
+        <option>Rutland</option>
+        <option>Shropshire</option>
+        <option>Somerset</option>
+        <option>South Yorkshire</option>
+        <option>Staffordshire</option>
+        <option>Suffolk</option>
+        <option>Surrey</option>
+        <option>Tyne and Wear</option>
+        <option>Warwickshire</option>
+        <option>West Midlands</option>
+        <option>West Sussex</option>
+        <option>West Yorkshire</option>
+        <option>Wiltshire</option>
+        <option>Worcestershire</option>
+    </optgroup>
+    <optgroup label="Wales">
+        <option>Anglesey</option>
+        <option>Brecknockshire</option>
+        <option>Caernarfonshire</option>
+        <option>Carmarthenshire</option>
+        <option>Cardiganshire</option>
+        <option>Denbighshire</option>
+        <option>Flintshire</option>
+        <option>Glamorgan</option>
+        <option>Merioneth</option>
+        <option>Monmouthshire</option>
+        <option>Montgomeryshire</option>
+        <option>Pembrokeshire</option>
+        <option>Radnorshire</option>
+    </optgroup>
+    <optgroup label="Scotland">
+        <option>Aberdeenshire</option>
+        <option>Angus</option>
+        <option>Argyllshire</option>
+        <option>Ayrshire</option>
+        <option>Banffshire</option>
+        <option>Berwickshire</option>
+        <option>Buteshire</option>
+        <option>Cromartyshire</option>
+        <option>Caithness</option>
+        <option>Clackmannanshire</option>
+        <option>Dumfriesshire</option>
+        <option>Dunbartonshire</option>
+        <option>East Lothian</option>
+        <option>Fife</option>
+        <option>Inverness-shire</option>
+        <option>Kincardineshire</option>
+        <option>Kinross</option>
+        <option>Kirkcudbrightshire</option>
+        <option>Lanarkshire</option>
+        <option>Midlothian</option>
+        <option>Morayshire</option>
+        <option>Nairnshire</option>
+        <option>Orkney</option>
+        <option>Peeblesshire</option>
+        <option>Perthshire</option>
+        <option>Renfrewshire</option>
+        <option>Ross-shire</option>
+        <option>Roxburghshire</option>
+        <option>Selkirkshire</option>
+        <option>Shetland</option>
+        <option>Stirlingshire</option>
+        <option>Sutherland</option>
+        <option>West Lothian</option>
+        <option>Wigtownshire</option>
+    </optgroup>
+    <optgroup label="Northern Ireland">
+        <option>Antrim</option>
+        <option>Armagh</option>
+        <option>Down</option>
+        <option>Fermanagh</option>
+        <option>Londonderry</option>
+        <option>Tyrone</option>
+    </optgroup>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_postalcode">Post Code:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_postalcode" name="postalcode"
+                                                           required="required" type="text"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 175px;">
+                                                    <label for="id_phone">Phone:</label></td>
+                                                <td>
+                                                    <input class="form-control" id="id_phone" name="phone" type="text"/>
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+							<div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <div style="text-align: center; width:100%;"><a style="width:100%;"
+                                                                                        data-toggle="collapse"
+                                                                                        data-parent="#accordion"
+                                                                                        href="#collapseThree"
+                                                                                        class=" btn btn-success"
+                                                                                        onclick="$(this).fadeOut(); $('#payInfo').fadeIn();">Continue
+                                            to Payment»</a></div>
+                                    </h4>
+                                </div>
+								<hr/>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <div style="text-align: center;"><a data-toggle="collapse"
+                                                                            data-parent="#accordion"
+                                                                            href="#collapseThree"
+                                                                            class=" btn   btn-success" id="payInfo"
+                                                                            style="width:100%;display: none;" onclick="$(this).fadeOut();  
+                   document.getElementById('collapseThree').scrollIntoView()">Enter Payment Information »</a>
+                                        </div>
+                                    </h4>
+								</div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                            <b>Payment Information</b>
+                                        </a>
+                                    </h4>
+                                </div>
+								<hr/>
+                                <div id="collapseThree" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <span class='payment-errors'></span>
+                                        <fieldset>
+                                            <legend>What method would you like to pay with today?</legend>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label" for="card-holder-name">Name on
+                                                    Card</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" stripe-data="name"
+                                                           id="name-on-card" placeholder="Card Holder's Name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label" for="card-number">Card
+                                                    Number</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" maxlength="16" stripe-data="number"
+                                                           id="card-number" placeholder="Debit/Credit Card Number">
+                                                    <br/>
+                                                    <div><img class="pull-right"
+                                                              src="https://s3.amazonaws.com/hiresnetwork/imgs/cc.png"
+                                                              style="max-width: 250px; padding-bottom: 20px;">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" for="expiry-month">Expiration
+                                                        Date</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="row">
+                                                            <div class="col-xs-3">
+                                                                <select class="form-control col-sm-10"
+                                                                        data-stripe="exp-month" id="card-exp-month"
+                                                                        style="margin-left:5px;">
+                                                                    <option>Month</option>
+                                                                    <option value="01">Jan (01)</option>
+                                                                    <option value="02">Feb (02)</option>
+                                                                    <option value="03">Mar (03)</option>
+                                                                    <option value="04">Apr (04)</option>
+                                                                    <option value="05">May (05)</option>
+                                                                    <option value="06">June (06)</option>
+                                                                    <option value="07">July (07)</option>
+                                                                    <option value="08">Aug (08)</option>
+                                                                    <option value="09">Sep (09)</option>
+                                                                    <option value="10">Oct (10)</option>
+                                                                    <option value="11">Nov (11)</option>
+                                                                    <option value="12">Dec (12)</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-xs-3">
+                                                                <select class="form-control" data-stripe="exp-year"
+                                                                        id="card-exp-year">
+                                                                    <option value="2016">2016</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2019">2019</option>
+                                                                    <option value="2020">2020</option>
+                                                                    <option value="2021">2021</option>
+                                                                    <option value="2022">2022</option>
+                                                                    <option value="2023">2023</option>
+                                                                    <option value="2024">2024</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" for="cvv">Card CVC</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" maxlength="3" class="form-control" stripe-data="cvc"
+                                                               id="card-cvc" placeholder="Security Code">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-3 col-sm-9">
+                                                    </div>
+                                                </div>
+                                        </fieldset>
+                                        <button type="submit" class="btn btn-success btn-lg" style="width:100%;">Pay
+                                            Now
+                                        </button>
+                                        <br/>
+                                        <div style="text-align: left;"><br/>
+                                            By submiting this order you are agreeing to our <a href="/legal/billing/">universal
+                                                billing agreement</a>, and <a href="/legal/terms/">terms of service</a>.
+                                            If you have any questions about our products or services please contact us
+                                            before placing this order.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
 	</section>
 
 	<section id="footer">
