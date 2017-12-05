@@ -12,6 +12,7 @@ var contact = require('./routes/contact');
 var ordercomplete = require('./routes/ordercomplete');
 var payment = require('./routes/payment');
 var products = require('./routes/products');
+var order = require('./routes/order');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use('/contact', contact);
 app.use('/ordercomplete', ordercomplete);
 app.use('/payment', payment);
 app.use('/products', products);
+app.use('/order', products);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

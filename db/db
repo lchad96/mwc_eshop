@@ -1,0 +1,32 @@
+var db = {
+    products: [
+        {
+            product_id:"001",
+            product_name: "item1",
+            product_description: "some text here",
+            product_price: 10.00
+        },
+        {
+            product_id:"002",
+            product_name: "item2",
+            product_description: "some text here",
+            product_price: 10.00
+        },
+        {
+            product_id:"003",
+            product_name: "item3",
+            product_description: "some text here",
+            product_price: 10.00
+        },
+        {
+            product_id:"004",
+            product_name: "item4",
+            product_description: "some text here",
+            product_price: 10.00
+        }
+    ],
+    basket: [],
+    orders: []
+};
+
+module.exports = db;

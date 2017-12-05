@@ -52,13 +52,13 @@
     <div class='row' style='padding-top:25px; padding-bottom:25px;'>
         <div class='col-md-12'>
             <div id='mainContentWrapper'>
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-12">
                     <h2 style="text-align: center;">
                         Review Your Order & Complete Checkout
                     </h2>
                     <hr/>
                     <div class="shopping_cart">
-                        <form class="form-horizontal" role="form" action="" method="post" id="payment-form">
+                        <form class="form-horizontal" role="form" action="/ordercomplete" method="post" id="payment-form">
                             <div class="panel-group" id="accordion">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
@@ -70,26 +70,20 @@
                                     <div id="collapseOne" class="panel-collapse collapse show">
                                         <div class="panel-body">
                                             <div class="items">
-                                                <div class="col-md-9">
+                                                <div class="col-md-12">
                                                     <table class="table table-striped">
                                                         <tr>
                                                             <td colspan="2">
-                                                                <a class="btn btn-warning btn-sm pull-right"
-                                                                   href="http://www.startajobboard.com/"
-                                                                   title="Remove Item">X</a>
-                                                                <b>
-                                                                    Product Name</b></td>
+                                                                <b><%= product.product_name %></b></td>
                                                         </tr>
                                                         <tr>
                                                             <td>
                                                                 <ul>
-                                                                    <li>One Job Posting Credit</li>
-                                                                    <li>Job Distribution*</li>
-                                                                    <li>Social Media Distribution</li>
+                                                                    <li><%= product.product_description %></li>
                                                                 </ul>
                                                             </td>
                                                             <td>
-                                                                <b>£10.00</b>
+                                                                <center><b>£<%= product.product_price %></b></center>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -97,7 +91,7 @@
                                                 <div class="col-md-3">
                                                     <div style="text-align: center;">
                                                         <h3>Order Total</h3>
-                                                        <h3><span style="color:green;">£10.00</span></h3>
+                                                        <h3><span style="color:green;">£<%= product.product_price %></span></h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -386,7 +380,7 @@
                                                         Date</label>
                                                     <div class="col-sm-9">
                                                         <div class="row">
-                                                            <div class="col-xs-3">
+                                                            <div class="col-sm-4">
                                                                 <select class="form-control col-sm-10"
                                                                         data-stripe="exp-month" id="card-exp-month"
                                                                         style="margin-left:5px;">
@@ -405,7 +399,7 @@
                                                                     <option value="12">Dec (12)</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-xs-3">
+															<div class="col-xs-3">
                                                                 <select class="form-control" data-stripe="exp-year"
                                                                         id="card-exp-year">
                                                                     <option value="2016">2016</option>
